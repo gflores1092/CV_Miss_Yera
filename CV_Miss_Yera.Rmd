@@ -4,7 +4,7 @@ name: |
   | \huge\textbf{Gera Flores Sempertegui}
 #profilepic:
 position: |
-  | \scriptsize INDUSTRIAL ENGINEER MBA · SENIOR DATA \& AI EXECUTIVE · ANALYTICS LEADER · DIGITAL STRATEGY 
+  | \scriptsize INDUSTRIAL ENGINEER MBA · SENIOR DATA & AI EXECUTIVE · ANALYTICS LEADER · DIGITAL STRATEGY 
 #address:
 phone: (+51) 948425000
 email: "gflores1092@gmail.com"
