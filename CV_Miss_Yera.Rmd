@@ -38,7 +38,7 @@ library(tidyverse)
 
 ```{r}
 # Select the language (English or Spanish)
-lang <- "English"  # Change to "Spanish" for the Spanish version
+lang <- "Spanish"  # Change to "Spanish" for the Spanish version
 ```
 
 ```{r}
@@ -268,15 +268,15 @@ english_bullets <- c(
   
   #[2]
   "Led a team of 30 people responsible for logistics, analytics, finance, and commercial support for clients and sellers.",
-  "Standardized and optimized operational processes across Falabella, Tottus, Sodimac, and Linio, improving efficiency by up to 30\\%.",
+  "Standardized and optimized operational processes in Falabella, Tottus, Sodimac and Linio, improving efficiency up to 30\\%.",
   "Developed customer experience initiatives, increasing CSAT by 15\\% and NPS by 20\\% with data-based strategies.",
-  "Designed, executed, and managed the recovery of S/. 8 million in receivables using data-driven solutions.",
-  "Managed budgets, expense control, accounting transactions, and the P&L, ensuring growth and profitability.",
+  "Designed, executed, and managed the recovery of S/. 8 million in receivables using data driven solutions.",
+  "Managed budgets, expense control, accounting transactions, and the P\\&L, ensuring growth and profitability.",
   
   #[3]
   "Led a team of 5 people in charge of operational excellence and support to clients, partners, and couriers.",
   "Developed models that reduced delivery times by up to 30\\% and optimized resource use by 20\\%.",
-  "Implemented data-driven strategies for logistics expansion, increasing coverage by 25\\%.",
+  "Implemented data driven strategies for logistics expansion, increasing coverage by 25\\%.",
   "Increased on-time deliveries by 30\\% through demand prediction, service zone, and route optimization.",
   
   #[4]
