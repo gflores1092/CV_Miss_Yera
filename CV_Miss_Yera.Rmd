@@ -4,7 +4,7 @@ name: |
   | \huge\textbf{Gera Flores Sempertegui}
 #profilepic:
 position: |
-  | \scriptsize INDUSTRIAL ENGINEER MBA · SENIOR DATA & AI EXECUTIVE · ANALYTICS LEADER · DIGITAL STRATEGY 
+  | \scriptsize INDUSTRIAL ENGINEER MBA · SENIOR DATA \& AI EXECUTIVE · ANALYTICS LEADER · DIGITAL STRATEGY 
 #address:
 phone: (+51) 948425000
 email: "gflores1092@gmail.com"
@@ -522,9 +522,9 @@ english_skills <- tribble(~skill,
         "\\textbf{Project management:} Agile methodologies, Scrum, Kanban",
         "\\textbf{Financial management:} P\\&L management, financial and budget analysis, cost control",
         "\\textbf{Strategic and operational management:} Change management, digital transformation, supply chain optimization",
-        "\\textbf{Commercial & Marketing:} Commercial & marketing strategies, vendor management, market analysis",
+        "\\textbf{Commercial \\& Marketing:} Commercial \\& marketing strategies, vendor management, market analysis",
         "\\textbf{Data analysis / Machine Learning:} SQL, Python (pandas, numpy, scikit-learn, TensorFlow), R (tidyverse, shiny)",
-        "\\textbf{Data visualization / IDEs:} Looker, Tableau, Power BI, Visual Studio Code, RStudio, Colab, Jupyter Notebooks",
+        "\\textbf{Visualization of data / IDEs:} Looker, Tableau, Power BI, Visual Studio Code, RStudio, Colab, Jupyter Notebooks",
         "\\textbf{Collaborative tools / CRM / ERP:} Google Docs, Trello, Asana, Slack, Teams, Salesforce, Jira, SAP, Oracle",
         "\\textbf{Cloud / Others:} Google Cloud, Amazon Web Services, Microsoft Azure, Docker, Kubernetes, Airflow, Git, Spark, Regex, DAX",
 )
@@ -533,14 +533,14 @@ english_soft_skills <- tribble(~skill,
         "\\textbf{Leadership:} Strong ability to inspire and motivate teams toward common goals.",
         "\\textbf{Communication:} Excellent interpersonal communication skills, fostering collaboration.",
         "\\textbf{Problem solving:} Analytical approach to efficiently identify and resolve complex problems.",
-        "\\textbf{Mentoring & training:} Teaching and mentoring experience, promoting personal and professional growth.",
+        "\\textbf{Mentoring \\& training:} Teaching and mentoring experience, promoting personal and professional growth.",
         "\\textbf{Time management:} Ability to prioritize tasks and manage multiple projects under pressure."
 )
 
 english_hobbies <- tribble(~description,
         "I share educational content on data and analytics with a community of over 80k followers on social media.",
         "I'm always positive and optimistic, and I love spreading good energy to those around me.",
-        "I actively support Diversity, Equity & Inclusion (DEI) causes at work and in my community through inclusive leadership.",
+        "I actively support Diversity, Equity \\& Inclusion (DEI) causes at work and in my community through inclusive leadership.",
         "I love to travel and explore new cultures, I've had the opportunity to visit 27 countries and live abroad",
         "I'm passionate about history and enjoy learning about historical events, ancient civilizations, and visiting museums."
 )
