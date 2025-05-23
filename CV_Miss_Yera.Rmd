@@ -38,7 +38,7 @@ library(tidyverse)
 
 ```{r}
 # Select the language (English or Spanish)
-lang <- "Spanish"  # Change to "Spanish" for the Spanish version
+lang <- "English"  # Change to "Spanish" for the Spanish version
 ```
 
 ```{r}
@@ -206,9 +206,23 @@ spanish_companies <- c(
                       "DIVERSAS EMPRESAS"
                       )
 
-english_titles <- spanish_titles
+english_titles <- c(
+                    "Data \\& Analytics Manager", 
+                    "Head of Operations", 
+                    "Logistics Performance Manager", 
+                    "Growth Marketing Lead", 
+                    "Analytics Lead",
+                    "Additional experience"
+                    )
 
-english_companies <- spanish_companies
+english_companies <- c(
+                      "MEDIALABTECH",
+                      "FALABELLA", 
+                      "PEDIDOSYA", 
+                      "GLOVO", 
+                      "GLOVO",
+                      "VARIOUS COMPANIES"
+                      )
 
 remote_titles <- spanish_titles
 
