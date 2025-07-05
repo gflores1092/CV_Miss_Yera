@@ -18,8 +18,9 @@
 | Archivo | Descripción |
 |--------|-------------|
 | `CV_Miss_Yera.Rmd` | Código fuente en R, Markdown y Latex para editar mi CV fácilmente si necesitas adaptarlo (haz un fork antes!). |
-| `CV_Gera_Flores_Sempertegui.pdf` | Versión en español y en PDF de mi CV profesional, listo para descargar o imprimir. |
-| `CV_EN_Gera_Flores_Sempertegui.pdf` | Versión en inglés y en PDF de mi CV profesional, listo para descargar o imprimir. |
+| `CV_Gera_Flores_Sempertegui.pdf` | Versión en español y en PDF de mi CV profesional y corporativo. |
+| `CV_Gera_Flores_Sempertegui_Docente.pdf` | Versión en español y en PDF de mi CV docente y académico. |
+| `CV_EN_Gera_Flores_Sempertegui.pdf` | Versión en inglés y en PDF de mi CV profesional y corporativo. |
 | `README.md` | Este archivo que estás leyendo 🩷 |
 
 ---
