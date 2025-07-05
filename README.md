@@ -40,6 +40,7 @@ Si quieres colaborar, invitarme a un evento, contratarme, generar alguna oportun
 - 💼 **Instagram:** [instagram.com/layeraxd/](https://www.instagram.com/layeraxd/)
 - 💼 **Tiktok:** [tiktok.com/@layeraxd](https://www.tiktok.com/@layeraxd)
 - 🎬 **YouTube:** [youtube.com/@layeraxd](https://www.youtube.com/@layeraxd)
+- 🌐 **Página Web:** [missyera.com](https://www.missyera.com)
 
 ---
 
