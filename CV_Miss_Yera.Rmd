@@ -38,7 +38,7 @@ library(tidyverse)
 
 ```{r}
 # Select the language (English or Spanish)
-lang <- "English"  # Change to "Spanish" for the Spanish version
+lang <- "Spanish"  # Change to "Spanish" for the Spanish version
 ```
 
 ```{r}
@@ -241,14 +241,14 @@ spanish_bullets <- c(
   "Implementé modelos predictivos en Google Cloud, mejorando la toma de decisiones comerciales y segmentación regional.",
   "Gestioné la integración y armonización de fuentes comerciales y de marketing en dashboards estratégicos a nivel LATAM.",
   "Fomenté la adopción de prácticas data driven, promoviendo la madurez analítica y estructura de gobernanza regional.",
-  
+   
   #[2]
   "Lideré un equipo de 30 personas responsable de la logística, analítica, finanzas y soporte comercial a clientes y vendedores.",
   "Estandaricé y optimicé procesos operativos en Falabella, Tottus, Sodimac y Linio, mejorando la eficiencia hasta en 30\\%.",
   "Desarrollé iniciativas de customer experience, aumentando el CSAT en 15\\% y NPS en 20\\% con estrategias basadas en datos.",
   "Diseñé, ejecuté y gestioné la recuperación de cuentas por cobrar S/. 8 millones con soluciones y desarrollos data driven.",
   "Gestioné presupuestos, control de gastos, transacciones contables y el P\\&L, asegurando el crecimiento y rentabilidad.",
-  
+
   #[3]
   "Lideré un equipo de 5 personas a cargo de la excelencia operativa y el soporte al cliente, socios y repartidores.",
   "Desarrollé modelos que permitieron reducir los tiempos de entrega hasta en 30\\% y optimizar el uso de recursos en 20\\%.",
