@@ -129,6 +129,8 @@ paragraph <- function(text) {
 spanish_sections <- c(
                     "Resumen", 
                     "Experiencia docente", 
+                    "Mentoría y formación", 
+                    "Conferencias y talleres", 
                     "Experiencia profesional", 
                     "Educación",
                     "Certificados",
@@ -170,7 +172,7 @@ remote_sections <- c(
 # Spanish
 
 spanish_summary <- c(
-  "Ejecutiva senior con más de 12 años de experiencia en analítica avanzada, inteligencia artificial y estrategia comercial en empresas multinacionales a nivel LATAM. Ingeniera industrial con MBA y sólida trayectoria como docente de pregrado y postgrado en cursos de datos, programación, inteligencia artificial y transformación digital. Especializada en traducir la experiencia y contexto empresarial en contextos académicos y en la preparación de profesionales."
+  "Ejecutiva senior con más de 12 años de experiencia en analítica avanzada, inteligencia artificial y estrategia comercial en empresas multinacionales a nivel LATAM. Ingeniera industrial con MBA y sólida trayectoria como docente de pregrado y postgrado en cursos de análisis y ciencia de datos, programación, inteligencia artificial y transformación digital."
 )
 
 # English
@@ -201,6 +203,23 @@ spanish_prof_companies <- c(
                       "CIBERTEC"
                       )
 
+spanish_mentor_titles <- c(
+                    "Mentora", 
+                    "Capacitadora"
+                    )
+
+spanish_mentor_companies <- c(
+                      "INCUBADORAS DE STARTUPS",
+                      "COFIDE"
+                      )
+
+spanish_conf_titles <- c(
+                    "Conferencista"
+                    )
+
+spanish_conf_companies <- c(
+                      "MISS YERA"
+                      )
 spanish_titles <- c(
                     "Data \\& Analytics Manager", 
                     "Head of Operations", 
@@ -267,20 +286,50 @@ spanish_prof_bullets <- c(
 
 # Spanish
 
+spanish_mentor_bullets <- c(
+
+  #[1]
+  "Mentora de emprendedores y startups en incubadoras como Bioincuba (UPCH) y 1551 (UNMSM).",
+  
+  #[2]
+  "Capacito MYPES en materias de soluciones de datos, herramientas tecnológicas e Inteligencia Artificial."
+  
+)
+  
+```
+
+
+```{r}
+
+# Spanish
+
+spanish_conf_bullets <- c(
+
+  #[1]
+  "He dictado más de 50 conferencias a nivel LATAM en instituciones educativas, universidades, empresas, entre otros.",
+  "He participado en ponencias en universidades como PUCP, UNI, UNMSM, UPN, UTP, UTEC, UNSA, entre otros.",
+  "He realizado charlas y conferencias en entidades y empresas como Ingram Micro, Presente, entre otros."
+  
+)
+  
+```
+
+
+```{r}
+
+# Spanish
+
 spanish_bullets <- c(
 
   #[1]
   "Lideré proyectos estratégicos de analítica avanzada y machine learning a nivel LATAM en Mondelez International.",
-  "Fomenté la adopción de prácticas data driven, promoviendo la madurez analítica y estructura de gobernanza regional.",
    
   #[2]
   "Lideré un equipo de 30 personas responsable de la logística, analítica, finanzas y soporte comercial a clientes y vendedores.",
-  "Estandaricé y optimicé procesos operativos en Falabella, Tottus, Sodimac y Linio, mejorando la eficiencia hasta en 30\\%.",
 
   #[3]
   "Lideré un equipo de 5 personas a cargo de la excelencia operativa y el soporte al cliente, socios y repartidores.",
-  "Desarrollé modelos que permitieron reducir los tiempos de entrega hasta en 30\\% y optimizar el uso de recursos en 20\\%.",
- 
+  
   #[4]
   "Lideré un equipo multifuncional a cargo de alianzas comerciales, adquisición y retención de clientes y análisis de churn.",
 
@@ -656,6 +705,12 @@ if (lang == "English") {
     prof_titles <- spanish_prof_titles
     prof_companies <- spanish_prof_companies
     prof_bullets <- spanish_prof_bullets
+    mentor_titles <- spanish_mentor_titles
+    mentor_companies <- spanish_mentor_companies
+    mentor_bullets <- spanish_mentor_bullets
+    conf_titles <- spanish_conf_titles
+    conf_companies <- spanish_conf_companies
+    conf_bullets <- spanish_conf_bullets
     titles <- spanish_titles
     companies <- spanish_companies
     bullets <- spanish_bullets
@@ -694,7 +749,7 @@ if (lang == "English") {
 
 \hspace{0.25cm}\color{black}{\Large\faInfoCircle}\hspace{0.25cm}\section{`r sections[1]`}
 
-\vspace{-0.25cm}
+\vspace{-0.375cm}
 
 ```{r summary, results='asis'}
 tribble(~description,
@@ -753,10 +808,90 @@ tribble(~position, ~start, ~end,
         tabular()
 ```
 
+\vspace{-0.375cm}
+
 \hspace{0.25cm}\color{black}{\Large\faBriefcase}\hspace{0.25cm}\section{`r sections[3]`}
 
 \vspace{-0.375cm}
 
+```{r mentor_experience, results='asis'}
+tribble(~position, ~start, ~end,
+
+        # Position
+        title(mentor_titles[2]), 2025, NA,
+        company(mentor_companies[2]), 2025, NA,
+        bullet(mentor_bullets[2]), 2025, NA,
+        "\\tiny", 2025, NA,
+      
+        # Position
+        title(mentor_titles[1]), 2024, NA,
+        company(mentor_companies[1]), 2024, NA,
+        bullet(mentor_bullets[1]), 2024, NA,
+        "\\tiny", 2024, NA,
+        
+        ) %>%
+        arrange(-start) %>%
+        mutate(end = replace_na(as.character(end), "")) %>%
+        mutate(years = if_else(end==start,
+                                as.character(start),
+                                paste(start, "--", end, sep=""))) %>%
+        select(years, position) %>%
+        group_by(years) %>%
+        mutate(n = row_number()) %>%
+        mutate(years = case_when(n>1 ~ "", TRUE ~ years)) %>%
+        mutate(years = case_when(n==2 ~ location(degrees$location[1]), TRUE ~ years)) %>%
+        mutate(aux = str_detect(years,'^20*')) %>%
+        mutate(years = case_when(aux==TRUE ~ calendar(years), TRUE ~ years)) %>%
+        select(position, years) %>%
+        ungroup() %>%
+        mutate(final=paste(position, years, sep="")) %>%
+        select(final) %>%
+        tabular()
+```
+
+\vspace{-0.375cm}
+
+\hspace{0.25cm}\color{black}{\Large\faBriefcase}\hspace{0.25cm}\section{`r sections[4]`}
+
+\vspace{-0.375cm}
+
+```{r conf_experience, results='asis'}
+tribble(~position, ~start, ~end,
+
+        # Position
+        title(conf_titles[1]), 2024, NA,
+        company(conf_companies[1]), 2024, NA,
+        bullet(conf_bullets[1]), 2024, NA,
+        bullet(conf_bullets[2]), 2024, NA,
+        bullet(conf_bullets[3]), 2024, NA,
+        "\\tiny", 2024, NA
+
+        ) %>%
+        arrange(-start) %>%
+        mutate(end = replace_na(as.character(end), "")) %>%
+        mutate(years = if_else(end==start,
+                                as.character(start),
+                                paste(start, "--", end, sep=""))) %>%
+        select(years, position) %>%
+        group_by(years) %>%
+        mutate(n = row_number()) %>%
+        mutate(years = case_when(n>1 ~ "", TRUE ~ years)) %>%
+        mutate(years = case_when(n==2 ~ location(degrees$location[1]), TRUE ~ years)) %>%
+        mutate(aux = str_detect(years,'^20*')) %>%
+        mutate(years = case_when(aux==TRUE ~ calendar(years), TRUE ~ years)) %>%
+        select(position, years) %>%
+        ungroup() %>%
+        mutate(final=paste(position, years, sep="")) %>%
+        select(final) %>%
+        tabular()
+```
+
+\vspace{-0.375cm}
+
+\hspace{0.25cm}\color{black}{\Large\faBriefcase}\hspace{0.25cm}\section{`r sections[5]`}
+
+\vspace{-0.375cm}
+                                                              
 ```{r experience, results='asis'}
 tribble(~position, ~start, ~end,
 
@@ -766,33 +901,30 @@ tribble(~position, ~start, ~end,
         title(titles[1]), 2024, 2025,
         company(companies[1]), 2024, 2025,
         bullet(bullets[1]), 2024, 2025,
-        bullet(bullets[2]), 2024, 2025,
         "\\tiny", 2024, 2025,
 
         # Position
         title(titles[2]), 2021, 2024,
         company(companies[2]), 2021, 2024,
-        bullet(bullets[3]), 2021, 2024,
-        bullet(bullets[4]), 2021, 2024,
+        bullet(bullets[2]), 2021, 2024,
         "\\tiny", 2021, 2024,
 
         # Position
         title(titles[3]), 2021, 2021,
         company(companies[3]), 2021, 2021,
-        bullet(bullets[5]), 2021, 2021,
-        bullet(bullets[6]), 2021, 2021,
+        bullet(bullets[3]), 2021, 2021,
         "\\tiny", 2021, 2021,
 
         # Position
         title(titles[4]), 2020, 2021,
         company(companies[4]), 2020, 2021,
-        bullet(bullets[7]), 2020, 2021,
+        bullet(bullets[4]), 2020, 2021,
         "\\tiny", 2020, 2021,
 
         # Position
         title(titles[5]), 2018, 2019,
         company(companies[5]), 2018, 2019,
-        bullet(bullets[8]), 2018, 2019,
+        bullet(bullets[5]), 2018, 2019,
         "\\tiny", 2018, 2019,
 
         ) %>%
@@ -817,9 +949,9 @@ tribble(~position, ~start, ~end,
 
 \vspace{-0.375cm}
 
-\hspace{0.25cm}\color{black}{\Large\faGraduationCap}\hspace{0.25cm}\section{`r sections[4]`}
+\hspace{0.25cm}\color{black}{\Large\faGraduationCap}\hspace{0.25cm}\section{`r sections[6]`}
 
-\vspace{-0.25cm}
+\vspace{-0.375cm}
 
 ```{r education, results='asis'}
 tribble(~degree, ~start, ~end,
@@ -866,11 +998,11 @@ tribble(~degree, ~start, ~end,
         tabular()
 ```
 
-\vspace{-0.5cm}
+\vspace{-0.375cm}
 
-\hspace{0.25cm}\color{black}{\Large\faUniversity}\hspace{0.25cm}\section{`r sections[5]`}
+\hspace{0.25cm}\color{black}{\Large\faUniversity}\hspace{0.25cm}\section{`r sections[7]`}
 
-\vspace{-0.10cm}
+\vspace{-0.375cm}
 
 ```{r certificates, results='asis'}
 tribble(~degree,
@@ -883,11 +1015,11 @@ tribble(~degree,
         tabular()
 ```
 
-\vspace{-0.1cm}
+\vspace{-0.375cm}
 
-\hspace{0.25cm}\color{black}{\Large\faList}\hspace{0.25cm}\section{`r sections[6]`}
+\hspace{0.25cm}\color{black}{\Large\faList}\hspace{0.25cm}\section{`r sections[8]`}
 
-\vspace{-0.1cm}
+\vspace{-0.375cm}
 
 ```{r projects, results='asis'}
 tribble(~project,
@@ -926,11 +1058,11 @@ tribble(~project,
   tabular()
 ```
 
-\vspace{-0.1cm}
+\vspace{-0.375cm}
 
-\hspace{0.25cm}\color{black}{\Large\faBook}\hspace{0.25cm}\section{`r sections[7]`}
+\hspace{0.25cm}\color{black}{\Large\faBook}\hspace{0.25cm}\section{`r sections[9]`}
 
-\vspace{-0.1cm}
+\vspace{-0.375cm}
 
 ```{r technical_skills, results='asis'}
 tribble(~skill,
@@ -948,11 +1080,11 @@ tribble(~skill,
         tabular()
 ```
 
-\vspace{-0.1cm}
+\vspace{-0.375cm}
 
-\hspace{0.25cm}\color{black}{\Large\faComment}\hspace{0.25cm}\section{`r sections[8]`}
+\hspace{0.25cm}\color{black}{\Large\faComment}\hspace{0.25cm}\section{`r sections[10]`}
 
-\vspace{-0.1cm}
+\vspace{-0.375cm}
 
 ```{r soft_skills, results='asis'}
 tribble(~skills,
@@ -966,20 +1098,11 @@ tribble(~skills,
         tabular()
 ```
 
-\vspace{-0.1cm}
-
-\hspace{0.25cm}\color{black}{\Large\faBalanceScale}\hspace{0.25cm}\section{`r sections[9]`}
-
-\vspace{-0.1cm}
+\vspace{-0.375cm}
 
 ```{r interests, results='asis'}
-tribble(~hobbies,
-        bullet(hobbies$description[1]),
-        bullet(hobbies$description[2]),
-        bullet(hobbies$description[3]),
-        bullet(hobbies$description[4]),
-        bullet(hobbies$description[5]),
-        "\\tiny"
+tribble(~interest,
+        "Información adicional en mi cuenta de \\textbf{\\href{https://www.linkedin.com/in/gflores1092/}{LinkedIn}}."
         ) %>%
         tabular()
 ```
